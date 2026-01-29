@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function BusinessModel() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const isInView = useInView(sectionRef, { once: true, margin: '-50px', amount: 0.2 })
 
   const benefits = [
     {

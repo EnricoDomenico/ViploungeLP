@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function Benefits() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const isInView = useInView(sectionRef, { once: true, margin: '-50px', amount: 0.2 })
 
   const benefits = [
     {
@@ -102,12 +102,12 @@ export default function Benefits() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.id}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
-                duration: 0.8,
-                delay: index * 0.15,
-                ease: 'easeOut',
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94],
               }}
             >
               <div className="group h-full">

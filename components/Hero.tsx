@@ -31,8 +31,8 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.3,
+        staggerChildren: 0.06,
+        delayChildren: 0.2,
       },
     },
   }
@@ -40,29 +40,29 @@ export default function Hero() {
   const wordVariants = {
     hidden: { 
       opacity: 0, 
-      filter: 'blur(10px)',
-      y: 20,
+      filter: 'blur(8px)',
+      y: 15,
     },
     visible: { 
       opacity: 1, 
       filter: 'blur(0px)',
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
 
   const ctaVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
-        delay: 2,
-        duration: 1,
-        ease: 'easeOut',
+        delay: 1.5,
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
   }
@@ -73,12 +73,13 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div ref={bgRef} className="absolute inset-0 scale-100">
           <Image
-            src="/images/LOUNGECENTER.jpg"
+            src="/images/LOUNGECENTER.jpg?v=2"
             alt="VipLounge Center"
             fill
             className="object-cover"
             priority
             quality={100}
+            unoptimized
           />
         </div>
         

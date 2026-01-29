@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "target": "landing-page", 
-    "public": "out",
+    "site": "viploungelp-57468",
+    "public": "out", 
     "ignore": [
       "firebase.json",
       "**/.*",

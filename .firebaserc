@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "viploungelp-57468"
-  }
+  },
+  "targets": {
+    "viploungelp-57468": {
+      "hosting": {
+        "landing-page": [
+          "viplounge-e4ca1",
+          "viplounge-lp"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

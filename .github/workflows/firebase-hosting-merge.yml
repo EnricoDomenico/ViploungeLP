@@ -17,4 +17,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_VIPLOUNGELP_57468 }}
           channelId: live
-          projectId: viploungelp-57468
+          projectId: viplounge-e4ca1

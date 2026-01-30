@@ -36,7 +36,7 @@ function StatCard({ value, label, suffix = '', delay = 0 }: StatCardProps) {
   return (
     <motion.div
       ref={ref}
-      className="glass-panel p-8 md:p-12 relative overflow-hidden group"
+      className="glass-panel p-6 sm:p-8 md:p-12 relative overflow-hidden group"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 1, delay: delay / 1000 }}
@@ -48,11 +48,11 @@ function StatCard({ value, label, suffix = '', delay = 0 }: StatCardProps) {
 
       {/* Content */}
       <div className="relative z-10">
-        <motion.div className="text-5xl md:text-7xl font-cormorant font-light mb-4 gradient-text">
+        <motion.div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light mb-3 md:mb-4 gradient-text">
           <motion.span>{displayValue}</motion.span>
           {suffix}
         </motion.div>
-        <div className="text-sm md:text-base font-montserrat tracking-widest-elite uppercase text-champagne-gold/70">
+        <div className="text-xs sm:text-sm md:text-base font-montserrat tracking-wider uppercase text-champagne-gold/70">
           {label}
         </div>
       </div>
@@ -75,22 +75,22 @@ export default function Stats() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative section-padding bg-gradient-to-b from-dark-elite via-wine-prestige/10 to-dark-elite">
+    <section ref={sectionRef} className="relative px-6 sm:px-8 md:px-12 lg:px-24 py-20 md:py-32 bg-gradient-to-b from-dark-elite via-wine-prestige/10 to-dark-elite">
       {/* Section Title */}
       <motion.div
-        className="text-center mb-16 md:mb-24"
+        className="text-center mb-12 md:mb-16 lg:mb-24"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="headline-elite mb-6">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light italic tracking-wide mb-6">
           Impacto Real em Números
         </h2>
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-champagne-gold to-transparent mx-auto" />
       </motion.div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl mx-auto">
         {stats.map((stat, index) => (
           <StatCard
             key={stat.label}

@@ -59,7 +59,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-6xl mx-auto mb-16">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 max-w-6xl mx-auto mb-12 md:mb-16">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -141,13 +141,13 @@ export default function Footer() {
               <p className="text-white/50 text-xs font-montserrat tracking-wider mb-3">
                 NEWSLETTER EXCLUSIVA
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   placeholder="Seu email"
-                  className="flex-1 bg-white/5 border border-champagne-gold/20 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-champagne-gold/50 transition-colors"
+                  className="flex-1 bg-white/5 border border-champagne-gold/20 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-champagne-gold/50 transition-colors w-full"
                 />
-                <button className="px-4 py-2 bg-gradient-to-r from-wine-prestige to-ruby-vibrant text-white text-xs font-montserrat tracking-wider hover:opacity-80 transition-opacity">
+                <button className="px-4 py-2 bg-gradient-to-r from-wine-prestige to-ruby-vibrant text-white text-xs font-montserrat tracking-wider hover:opacity-80 transition-opacity w-full sm:w-auto">
                   OK
                 </button>
               </div>
@@ -160,7 +160,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-montserrat tracking-wider"
+          className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-montserrat tracking-wider text-center md:text-left"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: 0.8 }}

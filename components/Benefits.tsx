@@ -80,25 +80,25 @@ export default function Benefits() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative section-padding overflow-hidden bg-dark-elite">
+    <section ref={sectionRef} className="relative px-6 sm:px-8 md:px-12 lg:px-24 py-20 md:py-32 overflow-hidden bg-dark-elite">
       {/* Section Title */}
       <motion.div
-        className="text-center mb-20 relative z-10"
+        className="text-center mb-12 md:mb-20 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="headline-elite mb-6">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light italic tracking-wide mb-6">
           Por Que VipLounge
         </h2>
-        <p className="subheadline-elite max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl font-montserrat tracking-wider uppercase text-champagne-gold/80 max-w-2xl mx-auto px-4">
           Eleve sua marca com o clube de benefícios mais exclusivo do mercado
         </p>
       </motion.div>
 
       {/* Benefits Grid */}
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-full w-full max-w-7xl mx-auto">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.id}
@@ -146,12 +146,12 @@ export default function Benefits() {
 
       {/* Call to Action */}
       <motion.div
-        className="text-center mt-20 relative z-10"
+        className="text-center mt-12 md:mt-20 relative z-10"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 1.2 }}
       >
-        <p className="font-montserrat text-white/60 text-sm md:text-base mb-8 max-w-2xl mx-auto">
+        <p className="font-montserrat text-white/60 text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto px-4">
           Junte-se aos estabelecimentos que estão redefinindo o conceito de exclusividade
         </p>
         <button className="luxury-button group">

@@ -89,10 +89,10 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex flex-col items-center justify-center text-center section-padding">
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 sm:px-8 md:px-12 lg:px-24 py-20 md:py-32">
         {/* Animated Headline */}
         <motion.h1
-          className="headline-elite mb-8 max-w-5xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light italic tracking-wide mb-8 w-full max-w-5xl"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -101,7 +101,7 @@ export default function Hero() {
             <motion.span
               key={index}
               variants={wordVariants}
-              className="inline-block mr-3 md:mr-4"
+              className="inline-block mr-2 sm:mr-3 md:mr-4"
               style={{ display: 'inline-block' }}
             >
               {word}
@@ -111,7 +111,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p
-          className="subheadline-elite mb-12"
+          className="text-base sm:text-lg md:text-xl font-montserrat tracking-wider uppercase text-champagne-gold/80 mb-12 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 1.5, duration: 1 }}

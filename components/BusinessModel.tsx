@@ -41,25 +41,25 @@ export default function BusinessModel() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative section-padding bg-gradient-to-b from-dark-elite via-black to-dark-elite overflow-hidden">
+    <section ref={sectionRef} className="relative px-6 sm:px-8 md:px-12 lg:px-24 py-20 md:py-32 bg-gradient-to-b from-dark-elite via-black to-dark-elite overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-ruby-vibrant/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-champagne-gold/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative w-full max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="headline-elite mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light italic tracking-wide mb-6">
             Como Funciona o VipLounge
           </h2>
-          <p className="font-montserrat text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-montserrat text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-4">
             Um clube de benefícios premium que sua empresa oferece aos seus clientes,
             <span className="text-champagne-gold"> conectando-os a uma rede exclusiva</span> de estabelecimentos
             e experiências de alto padrão.
@@ -67,8 +67,8 @@ export default function BusinessModel() {
         </motion.div>
 
         {/* How it Works - Steps */}
-        <div className="mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="mb-16 md:mb-24">
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 relative">
             {/* Connecting Line */}
             <div className="hidden md:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne-gold/30 to-transparent" />
             
@@ -120,7 +120,7 @@ export default function BusinessModel() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -155,16 +155,16 @@ export default function BusinessModel() {
 
         {/* CTA Section */}
         <motion.div
-          className="mt-20 text-center"
+          className="mt-12 md:mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 1, delay: 1.6 }}
         >
-          <div className="glass-panel p-12 max-w-3xl mx-auto border-2 border-champagne-gold/20">
-            <h3 className="font-cormorant text-3xl md:text-4xl font-light italic mb-6 text-white">
+          <div className="glass-panel p-6 sm:p-8 md:p-12 w-full max-w-3xl mx-auto border-2 border-champagne-gold/20">
+            <h3 className="font-cormorant text-2xl sm:text-3xl md:text-4xl font-light italic mb-4 md:mb-6 text-white">
               Pronto para elevar seu negócio?
             </h3>
-            <p className="font-montserrat text-white/70 mb-8 text-sm md:text-base tracking-wide">
+            <p className="font-montserrat text-white/70 mb-6 md:mb-8 text-sm md:text-base tracking-wide px-2">
               Junte-se ao ecossistema de empresas que oferecem experiências premium aos seus clientes
             </p>
             <button className="luxury-button mx-auto">

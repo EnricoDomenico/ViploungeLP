@@ -20,24 +20,74 @@ export default function Connector() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative section-padding overflow-hidden bg-dark-elite">
+    <section ref={sectionRef} className="relative px-6 sm:px-8 md:px-12 lg:px-24 py-20 md:py-32 overflow-hidden bg-dark-elite">
       {/* Section Title */}
       <motion.div
-        className="text-center mb-20 relative z-10"
+        className="text-center mb-12 md:mb-20 relative z-10"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="headline-elite mb-6">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-cormorant font-light italic tracking-wide mb-6">
           A Rede de Parceiros
         </h2>
-        <p className="subheadline-elite max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl font-montserrat tracking-wider uppercase text-champagne-gold/80 max-w-2xl mx-auto px-4">
           Conectamos você aos melhores estabelecimentos premium do mercado
         </p>
       </motion.div>
 
-      {/* Orbital Network Container */}
-      <div className="relative max-w-6xl mx-auto h-[700px] md:h-[800px] flex items-center justify-center">
+      {/* Mobile: Grid Vertical Simples */}
+      <div className="md:hidden relative max-w-2xl mx-auto">
+        {/* Central VIP Badge - Mobile */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <div className="inline-flex w-24 h-24 rounded-full border-2 border-dashed border-champagne-gold/40 items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-champagne-gold/20 to-ruby-vibrant/20 backdrop-blur-sm border border-champagne-gold/30 flex items-center justify-center">
+              <span className="text-champagne-gold text-xl font-cormorant italic">VIP</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Services Grid - Mobile (2 Columns) */}
+        <div className="grid grid-cols-2 gap-4">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 1 + index * 0.1,
+                ease: "easeOut",
+              }}
+            >
+              <div className="group cursor-pointer">
+                <div className="glass-panel p-6 rounded-lg flex flex-col items-center justify-center border border-champagne-gold/30 hover:border-ruby-vibrant hover:shadow-lg transition-all duration-500 hover:scale-105 relative overflow-hidden min-h-[120px]">
+                  {/* Icon */}
+                  <div className="text-3xl mb-2">{service.icon}</div>
+                  
+                  {/* Label */}
+                  <div className="text-xs font-montserrat tracking-wider text-champagne-gold/70 text-center leading-tight">
+                    {service.name}
+                  </div>
+
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-ruby-vibrant/20 to-transparent" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: Orbital Network Container */}
+      <div className="hidden md:block relative max-w-6xl mx-auto h-[700px] md:h-[800px] flex items-center justify-center">
         {/* Central Circle - Ponto de Conexão */}
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
@@ -118,7 +168,7 @@ export default function Connector() {
 
       {/* Bottom Description */}
       <motion.div
-        className="text-center mt-12 relative z-10 max-w-3xl mx-auto"
+        className="text-center mt-12 relative z-10 max-w-3xl mx-auto px-4"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1, delay: 2 }}

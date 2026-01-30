@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function BusinessModel() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-50px', amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
   const benefits = [
     {
@@ -48,7 +48,7 @@ export default function BusinessModel() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-champagne-gold/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative w-full max-w-7xl mx-auto">
+      <div className="relative w-full max-w-7xl mx-auto z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-12 md:mb-20"
@@ -91,12 +91,12 @@ export default function BusinessModel() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="relative"
+                className="relative z-10"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.8, delay: 0.5 + index * 0.2 }}
               >
-                <div className="glass-panel p-8 h-full border-t-2 border-champagne-gold/50 relative group hover:border-ruby-vibrant transition-all duration-500">
+                <div className="glass-panel p-8 h-full border-t-2 border-champagne-gold/50 relative group hover:border-ruby-vibrant transition-all duration-500 bg-black/40">
                   {/* Step Number */}
                   <div className="absolute -top-6 left-8 w-12 h-12 rounded-full bg-gradient-to-br from-ruby-vibrant to-wine-prestige flex items-center justify-center font-montserrat font-bold text-sm glow-ruby">
                     {item.step}
@@ -127,8 +127,9 @@ export default function BusinessModel() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: 1 + index * 0.2 }}
+              className="relative z-10"
             >
-              <div className="glass-panel p-8 h-full group hover:border-champagne-gold/30 transition-all duration-500">
+              <div className="glass-panel p-8 h-full group hover:border-champagne-gold/30 transition-all duration-500 bg-black/40">
                 {/* Icon */}
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">
                   {benefit.icon}

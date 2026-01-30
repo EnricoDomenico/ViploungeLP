@@ -41,9 +41,17 @@
     backdrop-filter: none;
   }
 
+  /* No mobile, adicionar background mais sólido para garantir legibilidade */
+  @media (max-width: 767px) {
+    .glass-panel {
+      @apply bg-black/60;
+    }
+  }
+
   @media (min-width: 768px) {
     .glass-panel {
       backdrop-filter: blur(12px);
+      @apply bg-white/5;
     }
   }
 

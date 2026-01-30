@@ -36,7 +36,7 @@ function StatCard({ value, label, suffix = '', delay = 0 }: StatCardProps) {
   return (
     <motion.div
       ref={ref}
-      className="glass-panel p-6 sm:p-8 md:p-12 relative overflow-hidden group"
+      className="glass-panel p-6 sm:p-8 md:p-12 relative overflow-hidden group bg-black/40 z-10"
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 1, delay: delay / 1000 }}

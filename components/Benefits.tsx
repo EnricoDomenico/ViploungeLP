@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function Benefits() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-50px', amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
   const benefits = [
     {
@@ -97,7 +97,7 @@ export default function Benefits() {
       </motion.div>
 
       {/* Benefits Grid */}
-      <div className="w-full w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto z-10 relative">
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
@@ -109,10 +109,11 @@ export default function Benefits() {
                 delay: index * 0.1,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
+              className="relative z-10"
             >
               <div className="group h-full">
                 {/* Benefit Card */}
-                <div className="h-full glass-panel p-8 border border-champagne-gold/20 hover:border-champagne-gold/50 transition-all duration-500 relative overflow-hidden">
+                <div className="h-full glass-panel p-8 border border-champagne-gold/20 hover:border-champagne-gold/50 transition-all duration-500 relative overflow-hidden bg-black/40">
                   {/* Icon */}
                   <motion.div
                     className="text-champagne-gold mb-6"
